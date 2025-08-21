@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Nav Collection</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config  -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#001F54", // Navy
+              teal: "#008080", // Teal
+              amber: "#FFB300", // Amber
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .spin {
+        animation: spin 1.5s linear infinite;
+      }
+    </style>
+  </head>
+  <!-- Preloader -->
+  <div id="preloader" class="fixed inset-0 bg-navy flex items-center justify-center z-50">
+    <a href="101.html" class="text-5xl font-bold tracking-tight bg-gradient-to-r from-teal to-amber bg-clip-text text-transparent spin">
+      MABO
+    </a>
+  </div>
+
+  <body class="bg-navy text-white">
+    <nav class="mx-auto max-w-7xl px-4">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a
+          href=""
+          class="text-3xl font-bold tracking-tight bg-gradient-to-r from-teal to-amber bg-clip-text text-transparent"
+        >
+          MABO</a
+        >
+
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex items-center gap-4">
+          <li
+            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            <a href="101.html">Home</a>
+          </li>
+          <li
+            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            <a href="102.html">About</a>
+          </li>
+          <li
+            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            <a href="103.html">Services</a>
+          </li>
+          <li
+            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            <a href="104.html">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden outline-none">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" class="hidden md:hidden bg-navy px-6 py-8">
+        <li
+          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 transition-colors duration-300"
+        >
+          <a href="101.html">Home</a>
+        </li>
+        <li
+          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+        >
+          <a href="102.html">About</a>
+        </li>
+        <li
+          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+        >
+          <a href="103.html">Services</a>
+        </li>
+        <li
+          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+        >
+          <a href="104.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Helping Javascript -->
+    <script>
+      // Highlight active link
+      const currentPage = window.location.pathname.split("/").pop();
+      const page = currentPage === "" ? "101" : currentPage;
+
+      document.querySelectorAll(".nav-link").forEach((li) => {
+        const link = li.querySelector("a");
+        if (link && link.getAttribute("href") === currentPage) {
+          li.classList.add("bg-amber");
+          link.classList.add("text-navy");
+          link.classList.remove("text-white");
+        }
+      });
+
+      // Toggle mobile menu
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Hide preloader when page fully loads
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        preloader.style.display = "none"; // hide preloader
+        content.classList.remove("hidden"); // show page content
+      });
+    </script>
+  </body>
+</html>
