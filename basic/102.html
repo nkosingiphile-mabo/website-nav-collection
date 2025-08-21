@@ -37,8 +37,14 @@
     </style>
   </head>
   <!-- Preloader -->
-  <div id="preloader" class="fixed inset-0 bg-navy flex items-center justify-center z-50">
-    <a href="101.html" class="text-5xl font-bold tracking-tight bg-gradient-to-r from-teal to-amber bg-clip-text text-transparent spin">
+  <div
+    id="preloader"
+    class="fixed inset-0 bg-navy flex items-center justify-center z-50"
+  >
+    <a
+      href="101.html"
+      class="text-5xl font-bold tracking-tight bg-gradient-to-r from-teal to-amber bg-clip-text text-transparent spin"
+    >
       MABO
     </a>
   </div>
@@ -78,20 +84,43 @@
           </li>
         </ul>
 
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden outline-none">
+        <!-- Mobile menu button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg p-2 bg-amber hover:bg-amber focus:outline-none"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="sr-only">Open menu</span>
           <svg
-            class="w-7 h-7"
+            id="iconOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-navy"
             fill="none"
-            stroke="currentColor"
             viewBox="0 0 24 24"
+            stroke="currentColor"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            />
+          </svg>
+          <svg
+            id="iconClose"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-navy hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
@@ -120,6 +149,10 @@
         </li>
       </ul>
     </nav>
+    <!-- Main Content -->
+    <section class="flex justify-center items-center h-64">
+      <a href="../index.html" class="px-6 py-3 bg-amber text-navy rounded-lg hover:bg-primary-700 transition">Back To Main</a>
+    </section>
 
     <!-- Helping Javascript -->
     <script>
@@ -136,12 +169,18 @@
         }
       });
 
-      // Toggle mobile menu
-      const btn = document.getElementById("menu-btn");
-      const menu = document.getElementById("mobile-menu");
+      // Mobile menu toggle
+      const btn = document.getElementById("menuBtn");
+      const mobile = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
 
       btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        mobile.classList.toggle("hidden");
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
       });
 
       // Hide preloader when page fully loads
