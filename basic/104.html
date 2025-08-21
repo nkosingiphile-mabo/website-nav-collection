@@ -62,25 +62,37 @@
 
         <!-- Desktop Nav -->
         <ul class="hidden md:flex items-center gap-4">
-          <li
-            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-          >
-            <a href="101.html">Home</a>
+          <li>
+            <a
+              href="101.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Home
+            </a>
           </li>
-          <li
-            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-          >
-            <a href="102.html">About</a>
+          <li>
+            <a
+              href="102.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              About
+            </a>
           </li>
-          <li
-            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-          >
-            <a href="103.html">Services</a>
+          <li>
+            <a
+              href="103.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Services
+            </a>
           </li>
-          <li
-            class="nav-link px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-          >
-            <a href="104.html">Contact</a>
+          <li>
+            <a
+              href="104.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Contact
+            </a>
           </li>
         </ul>
 
@@ -127,44 +139,61 @@
 
       <!-- Mobile Menu -->
       <ul id="mobile-menu" class="hidden md:hidden bg-navy px-6 py-8">
-        <li
-          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 transition-colors duration-300"
-        >
-          <a href="101.html">Home</a>
+        <li class="mb-4">
+          <a
+            href="101.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Home
+          </a>
         </li>
-        <li
-          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-        >
-          <a href="102.html">About</a>
+
+        <li class="mb-4">
+          <a
+            href="102.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            About
+          </a>
         </li>
-        <li
-          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-        >
-          <a href="103.html">Services</a>
+
+        <li class="mb-4">
+          <a
+            href="103.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Services
+          </a>
         </li>
-        <li
-          class="nav-link px-6 py-4 mb-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
-        >
-          <a href="104.html">Contact</a>
+
+        <li class="mb-4">
+          <a
+            href="104.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Contact
+          </a>
         </li>
       </ul>
     </nav>
     <!-- Main Content -->
     <section class="flex justify-center items-center h-64">
-      <a href="../index.html" class="px-6 py-3 bg-amber text-navy rounded-lg hover:bg-primary-700 transition">Back To Main</a>
+      <a
+        href="../index.html"
+        class="px-6 py-3 bg-amber text-navy rounded-lg hover:bg-primary-700 transition"
+        >Back To Main</a
+      >
     </section>
 
     <!-- Helping Javascript -->
     <script>
       // Highlight active link
       const currentPage = window.location.pathname.split("/").pop();
-      const page = currentPage === "" ? "101" : currentPage;
+      const page = currentPage === "" ? "101.html" : currentPage;
 
-      document.querySelectorAll(".nav-link").forEach((li) => {
-        const link = li.querySelector("a");
-        if (link && link.getAttribute("href") === currentPage) {
-          li.classList.add("bg-amber");
-          link.classList.add("text-navy");
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        if (link.getAttribute("href") === page) {
+          link.classList.add("bg-amber", "text-navy");
           link.classList.remove("text-white");
         }
       });
