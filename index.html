@@ -1,162 +1,306 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Veltrix — Demo</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mabo Elements | Home</title>
 
-  <!-- Tailwind CSS (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind config  -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: "#0B1B34",
-            primary: {
-              50:  "#eff6ff",
-              100: "#dbeafe",
-              600: "#2563eb",
-              700: "#1d4ed8",
-            }
+    <!-- Tailwind config  -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: "#001F54",
+              teal: "#008080",
+              amber: "#FFB300",
+            },
+            fontFamily: {
+              orbitron: ["Orbitron", "sans-serif"],
+              exo: ["Exo 2", "sans-serif"],
+            },
           },
-          boxShadow: {
-            soft: "0 10px 30px -12px rgba(0,0,0,0.25)"
-          }
+        },
+      };
+    </script>
+    <style>
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
         }
       }
-    }
-  </script>
+      .spin {
+        animation: spin 1.5s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-navy font-exo text-white">
+    <!-- Preloader -->
+    <div
+      id="preloader"
+      class="fixed inset-0 bg-navy flex items-center justify-center z-50"
+    >
+      <a
+        href="101.html"
+        class="text-5xl font-bold tracking-tight bg-gradient-to-r from-teal to-amber bg-clip-text text-transparent spin"
+      >
+        MABO
+      </a>
+    </div>
 
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
-</head>
-<body class="bg-white text-slate-800 antialiased">
-
-  <!-- ====== Header / Nav ====== -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
-    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav
+      class="navbar-blur bg-[rgba(15,23,42,0.7)] rounded-b-2xl mt-4 border border-[rgba(255,255,255,0.1)] mx-auto max-w-7xl px-4"
+    >
       <div class="flex h-16 items-center justify-between">
-        <!-- Brand -->
-        <a href="#" class="flex items-center gap-2 group">
-          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-600 text-white font-bold shadow-soft group-hover:scale-105 transition">
-            V
-          </span>
-          <span class="text-lg font-semibold text-navy">Veltrix</span>
-        </a>
+        <!-- Logo -->
+        <a
+          href=""
+          class="text-2xl font-bold font-orbitron bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          MABO ELEMENTS</a
+        >
 
-        <!-- Desktop links -->
-        <div class="hidden md:flex items-center gap-1">
-          <a href="#home" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Home</a>
-          <a href="#basic" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Basic</a>
-          <a href="#dropdow" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Dropdown</a>
-          <a href="#about" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">About</a>
-          <a href="#contact" class="nav-link px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Contact</a>
-        </div>
+        <!-- Desktop Nav -->
+        <ul class="hidden font-orbitron md:flex items-center gap-4">
+          <li>
+            <a
+              href="index.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="basic/101.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Components
+            </a>
+          </li>
+          <li>
+            <a
+              href="basic/101.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Templates
+            </a>
+          </li>
+          <li>
+            <a
+              href="basic/101.html"
+              class="nav-link block px-6 py-2 rounded-lg font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+            >
+              Docs
+            </a>
+          </li>
+        </ul>
 
-        <!-- CTA (desktop) -->
-        <div class="hidden md:flex">
-          <a href="#contact" class="inline-flex items-center rounded-xl bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-soft hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600">
-            Get a Quote
-          </a>
-        </div>
+        <button
+          class="hidden md:inline-block font-orbitron bg-gradient-to-r from-purple-600 to-blue-600 px-4 py-2 rounded-full hover:from-purple-700 hover:to-blue-700 transition"
+        >
+          Get Started
+        </button>
 
         <!-- Mobile menu button -->
-        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-slate-100 focus:outline-none" aria-expanded="false" aria-controls="mobileMenu">
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center rounded-lg p-2 bg-gradient-to-r from-purple-500 to-blue-500 hover:bg-amber focus:outline-none"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
           <span class="sr-only">Open menu</span>
-          <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          <svg
+            id="iconOpen"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-navy"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
-          <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <svg
+            id="iconClose"
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-navy hidden"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
 
-      <!-- Mobile menu -->
-      <div id="mobileMenu" class="md:hidden hidden pb-4">
-        <a href="#home" class="nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Home</a>
-        <a href="#basic" class="nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Basic</a>
-        <a href="#dropdow" class="nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Dropdown</a>
-        <a href="#about" class="nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">About</a>
-        <a href="#contact" class="nav-link block px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100">Contact</a>
-        <a href="#contact" class="mt-2 block rounded-xl bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white hover:bg-primary-700">Get a Quote</a>
-      </div>
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" class="hidden md:hidden px-6 py-8">
+        <li class="mb-4">
+          <a
+            href="index.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Home
+          </a>
+        </li>
+
+        <li class="mb-4">
+          <a
+            href="basic/101.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            About
+          </a>
+        </li>
+
+        <li class="mb-4">
+          <a
+            href="basic/101.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Services
+          </a>
+        </li>
+
+        <li class="mb-4">
+          <a
+            href="basic/101.html"
+            class="nav-link block px-6 py-4 rounded-lg text-2xl font-medium hover:bg-slate-100 hover:text-navy transition-colors duration-300"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
     </nav>
-  </header>
+    <!-- Hero Content -->
+    <section class="mx-auto max-w-7xl px-4">
+      <!-- Grid -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-[60%_40%] items-center gap-8 px-6 py-6"
+      >
+        <!-- Left Column -->
+        <div class="space-y-6">
+          <h1
+            class="text-4xl md:text-5xl font-bold font-orbitron leading-tight"
+          >
+            Build Websites Faster with Ready-Made Elements
+          </h1>
+          <p class="text-gray-600 text-lg max-w-xl mt-4">
+            Access a growing library of pre-built navigation bars, hero
+            sections, forms, and more — crafted with Tailwind CSS. Save time,
+            focus on your ideas, and launch stunning websites in minutes.
+          </p>
+          <div class="mt-6 flex flex-col md:flex-row gap-4">
+            <button
+              class="font-orbitron bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 rounded-full text-white hover:from-purple-700 hover:to-blue-700 transition shadow-lg"
+            >
+              Browse Components
+            </button>
+            <button
+              class="font-orbitron border border-gray-400 px-6 py-3 rounded-full text-gray-700 hover:bg-gray-100 transition"
+            >
+              Learn More
+            </button>
+          </div>
+        </div>
 
-  <!-- ====== Hero / Page buttons ====== -->
-  <main class="py-20">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold text-navy mb-6">Explore Our Pages</h1>
-      <p class="text-lg text-slate-600 mb-12">Click below to navigate to different sections of our project.</p>
+        <!-- Right Column -->
+        <div class="relative flex justify-center">
+          <!-- Gradient Half Circles Background -->
+          <div
+            class="absolute right-2 -top-4 w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-40 blur-2xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
 
-      <!-- Basic pages -->
-      <div class="mb-8">
-        <h2 class="text-2xl font-semibold text-navy mb-4">Basic Pages</h2>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="basic/101.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">101</a>
-          <a href="basic/201.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">201</a>
-          <a href="basic/301.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">301</a>
+          <div
+            class="absolute right-2 -top-4 w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-40 blur-3xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
+
+          <div
+            class="absolute right-2 -top-4 w-32 h-32 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-40 blur-2xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
+          <!-- Gradient Half Circles Background -->
+          <div
+            class="absolute -left-36 top-48 w-36 h-36 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-10 blur-2xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
+          <div
+            class="absolute -left-36 top-48 w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-40 blur-2xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
+
+          <div
+            class="absolute -left-36 top-48 w-24 h-24 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-40 blur-3xl"
+            style="clip-path: ellipse(75% 50% at 50% 50%)"
+          ></div>
+          <!-- Image -->
+          <img
+            src="assets/images/Devices-amico.png"
+            alt="Devices"
+            class="relative max-w-md w-full z-10"
+          />
         </div>
       </div>
+    </section>
 
-      <!-- Dropdown pages -->
-      <div>
-        <h2 class="text-2xl font-semibold text-navy mb-4">Dropdown Pages</h2>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="dropdow/101.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">101</a>
-          <a href="dropdow/201.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">201</a>
-          <a href="dropdow/301.html" class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition">301</a>
-        </div>
-      </div>
-    </div>
-  </main>
+    <!-- Helping Javascript -->
+    <script>
+      // Highlight active link
+      const currentPage = window.location.pathname.split("/").pop();
+      const page = currentPage === "" ? "index.html" : currentPage;
 
-  <!-- ====== Footer ====== -->
-  <footer class="border-t border-slate-200 bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
-      <p>Copyright © <span id="year"></span> Veltrix. All rights reserved.</p>
-      <nav class="flex gap-4">
-        <a href="#privacy" class="hover:text-navy">Privacy</a>
-        <a href="#terms" class="hover:text-navy">Terms</a>
-      </nav>
-    </div>
-  </footer>
-
-  <!-- ====== JS ====== -->
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile menu toggle
-    const btn = document.getElementById("menuBtn");
-    const mobile = document.getElementById("mobileMenu");
-    const iconOpen = document.getElementById("iconOpen");
-    const iconClose = document.getElementById("iconClose");
-
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      mobile.classList.toggle("hidden");
-      iconOpen.classList.toggle("hidden");
-      iconClose.classList.toggle("hidden");
-    });
-
-    // Active link highlighting
-    function setActiveLink() {
-      const links = document.querySelectorAll(".nav-link");
-      const hash = window.location.hash || "#home";
-      links.forEach(a => {
-        const isActive = a.getAttribute("href") === hash;
-        a.classList.toggle("bg-slate-100", isActive);
-        a.classList.toggle("text-navy", isActive);
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        if (link.getAttribute("href") === page) {
+          link.classList.add("bg-slate-100", "text-navy");
+          link.classList.remove("text-white");
+        }
       });
-    }
-    window.addEventListener("hashchange", setActiveLink);
-    window.addEventListener("load", setActiveLink);
-  </script>
-</body>
+
+      // Mobile menu toggle
+      const btn = document.getElementById("menuBtn");
+      const mobile = document.getElementById("mobile-menu");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        mobile.classList.toggle("hidden");
+        iconOpen.classList.toggle("hidden");
+        iconClose.classList.toggle("hidden");
+      });
+
+      // Hide preloader when page fully loads
+      window.addEventListener("load", () => {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        preloader.style.display = "none"; // hide preloader
+        content.classList.remove("hidden"); // show page content
+      });
+    </script>
+  </body>
 </html>
